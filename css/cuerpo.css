@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root {
+    --clr-neutral-200: 212, 15%, 34%;
+}
 
 html {
     height: 100%;
@@ -22,12 +25,11 @@ html {
 
 footer {
     display: flex;
-    background-color: rgba(52, 50, 50, 0.62);
+    background-color: rgba(44, 83, 100, 0.62);
     color: #fff;
     width: 100%;
     margin-top: auto;
-    box-shadow: -3px -15px 43px 13px rgba(64,180,201,0.75);
-
+    box-shadow: -3px -15px 43px 13px rgba(245, 222, 179, 0.5);
 }
 
 footer div {
@@ -41,11 +43,10 @@ footer div {
 .logo {
     width: 40%;
     justify-content: right;
-
 }
 footer p{
     padding-left: 50px;
-    font-size: 40px;
+    font-size: 35px;
     color: wheat;
     font-weight: lighter;
     font-style: italic;
@@ -75,7 +76,6 @@ footer p{
 
 .box {
     display: flex;
-
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -93,7 +93,9 @@ footer p{
 }
 
 .boxTexto p::first-letter {
-    font-size: 22px;
+    font-size: 19px;
+    background: rgba(101, 97, 97, 0.73);
+    border-radius: 50px;
 }
 
 
@@ -125,6 +127,7 @@ footer p{
     background-image: linear-gradient(to bottom, rgba(133, 127, 127, 0.34), rgba(63, 58, 56, 0));
     text-align: center;
     padding: 10px;
+
 }
 
 textarea::placeholder {
@@ -177,31 +180,28 @@ textarea:focus {
 }
 
 .sub {
-    color: white;
-    border: none;
+    color: wheat;
+    border: #2c5364 1px solid;
     border-radius: 20px;
     height: 45px;
     width: 150px;
     margin-top: 50px;
     text-align: -moz-center;
-    background-color: rgb(20, 91, 159);
-    font-size: 15px;
+    background-color: #1b343d;
+    font-size: 18px;
     box-shadow: 1px 15px 51px -11px rgba(0, 0, 0, 0.82);
     transition: all 0.5s ease-in-out;
     cursor: pointer;
     margin-bottom: 10px;
 }
-
-
 .sub#encri {
-    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.66);
-    background-color: rgba(255, 255, 12, 0.47);
+    background-color: #2c5364;
 }
 
 .sub#desen {
-    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.66);
-    background-color: rgb(20, 91, 159);
+    background-color: #1b343d;
 }
+
 
 
 @media screen and (max-width: 480px) {
@@ -209,7 +209,6 @@ textarea:focus {
         width: 100%;
         zoom: 70%;
     }
-
     .contenedor1 {
         margin: 0;
         padding: 0;
@@ -230,18 +229,27 @@ textarea:focus {
         padding-bottom: 0;
         margin-bottom: 0;
     }
+
 }
 
 @media screen and (max-height: 480px) {
     .contenedor1 {
         zoom: 55%;
     }
-
     .box {
         flex-direction: row;
         flex-wrap: nowrap;
     }
 }
+
+
+@media screen and (min-width: 980px) {
+    .box {
+        gap: 100px;
+    }
+}
+
+
 
 .img {
     width: 400px;
@@ -252,21 +260,28 @@ textarea:focus {
     margin-top: 0;
     font-size: 20px;
 }
-
 .img img {
     margin-top: 40px;
     width: 250px;
     height: 300px;
     margin-bottom: 40px;
+    background: rgba(133, 127, 127, 0.25);
+    border-radius: 10px;
 }
-
 
 .none {
     display: none;
 }
 
+
 .aparecer {
     display: flex;
+}
+
+::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+    background: hsl(var(--clr-neutral-200));
 }
 
 

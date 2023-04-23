@@ -6,8 +6,8 @@ function swanOpcion(opcion){
                 title: "Texto vacio...",
                 text: "El campo de texto no puede estar vacio!",
                 width:"320px",
-                background: " rgba(0, 156, 189, 0.7)",
-                color: "white"
+                background: " rgba(44, 83, 100, 0.7)",
+                color: "wheat"
             });
             break;
         case "info":
@@ -16,8 +16,8 @@ function swanOpcion(opcion){
                 title: "Caracteres no validos",
                 text: "Solo letras minusculas sin numeros ni caracteres especiales",
                 width:"320px",
-                background: " rgba(0, 156, 189, 0.7)",
-                color: "white"
+                background: " rgba(44, 83, 100, 0.7)",
+                color: "wheat"
             });
             break;
         case "copiar":
@@ -26,8 +26,8 @@ function swanOpcion(opcion){
                 title: "Sin texto para copiar",
                 text: "El campo de texto no puede estar vacio",
                 width:"320px",
-                background: " rgba(0, 156, 189, 0.7)",
-                color: "white"
+                background: " rgba(44, 83, 100, 0.7)",
+                color: "wheat"
             });
             break;
         default:

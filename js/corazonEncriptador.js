@@ -25,6 +25,9 @@ document.getElementById("encri").onclick = function () {
 
 }
 
+
+
+
 document.getElementById("desen").onclick = function () {
     visibleOculto();
     const regex = /^[a-z \n]+$/;
@@ -64,6 +67,12 @@ document.getElementById("desen").onclick = function () {
     }
     textWork.value = "";
 }
+const btnCopy = document.getElementById("copiar");
+
+function changeCopyButton() {
+    btnCopy.textContent = "Copiar";
+}
+changeCopyButton();
 
 document.getElementById("copiar").onclick = function () {
     let copyText = document.getElementById("resultado");
@@ -71,8 +80,9 @@ document.getElementById("copiar").onclick = function () {
     if (copyText.value.length > 0) {
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
+        btnCopy.textContent = "Copiado con éxito!";
+        setTimeout(changeCopyButton, 2000);
         textWork.value = copyText.value;
-
     } else {
         swanOpcion("copiar");
     }
