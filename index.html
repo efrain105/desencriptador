@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@200;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
 
 
@@ -71,150 +70,11 @@
 </footer>
 </body>
 
-
 </html>
-<script>
-    let resultado = document.getElementById("textoWork");
 
-    function visibleOculto() {
-        var boxResultado = document.querySelector(".boxResultado");
-        boxResultado.classList.add("none");
-        let imagen = document.querySelector(".img");
-        imagen.classList.add("aparecer");
-        if (resultado.value.length > 0) {
-            boxResultado.classList.remove("none");
-            boxResultado.classList.add("aparecer");
-            imagen.classList.remove("aparecer");
-            imagen.classList.add("none");
-        } else {
-            boxResultado.classList.add("none");
-            boxResultado.classList.remove("aparecer");
-            imagen.classList.remove("none");
-            imagen.classList.add("aparecer");
-        }
-    }
-
-    visibleOculto();
-</script>
-
-<script>
-    function swanOpcion(opcion){
-        switch (opcion) {
-            case "error":
-                Swal.fire({
-                    icon: "error",
-                    title: "Texto vacio...",
-                    text: "El campo de texto no puede estar vacio!",
-                    width:"320px",
-                    background: " rgba(0, 156, 189, 0.7)",
-                    color: "white"
-                });
-                break;
-            case "info":
-                Swal.fire({
-                    icon: "info",
-                    title: "Caracteres no validos",
-                    text: "Solo letras minusculas sin numeros ni caracteres especiales",
-                    width:"320px"
-                });
-                break;
-            case "copiar":
-                Swal.fire({
-                    icon: "info",
-                    title: "Sin texto para copiar",
-                    text: "El campo de texto no puede estar vacio",
-                    width:"320px"
-                });
-                break;
-            default:
-            // código a ejecutar si ninguna de las opciones anteriores se cumple
-        }
-    }
-</script>
-<script>
-
-    document.getElementById("encri").onclick = function () {
-        visibleOculto();
-        const regex = /^[a-z \n]+$/;
-        let textWork = document.getElementById("textoWork");
-        let textResult;
-        if (regex.test(textWork.value)) {
-            textResult = document.getElementById("resultado");
-            textResult.value = textWork.value
-                .replace(/e/gi, "enter")
-                .replace(/i/gi, "imes")
-                .replace(/a/gi, "ai")
-                .replace(/o/gi, "ober")
-                .replace(/u/gi, "ufat");
-            textWork.value = "";
-        } else {
-            textWork = document.getElementById("textoWork");
-            if (textWork.value.length === 0) {
-                swanOpcion("error");
-            } else {
-                swanOpcion("info");
-            }
-            textWork.value = "";
-            visibleOculto();
-        }
-
-    }
-
-    document.getElementById("desen").onclick = function () {
-        visibleOculto();
-        const regex = /^[a-z \n]+$/;
-        let textWork = document.getElementById("textoWork");
-        let textResult;
-        if (regex.test(textWork.value)) {
-            textResult = document.getElementById("resultado");
-            textResult.value = textWork.value
-                .replace(/\b\w*enter\w*\b/gi, function (match) {
-                    return match.replace(/enter/gi, "e");
-                })
-                .replace(/\b\w*imes\w*\b/gi, function (match) {
-                    return match.replace(/imes/gi, "i");
-                })
-                .replace(/\b\w*ai\w*\b/gi, function (match) {
-                    return match.replace(/ai/gi, "a");
-                })
-                .replace(/\b\w*ober\w*\b/gi, function (match) {
-                    return match.replace(/ober/gi, "o");
-                })
-                .replace(/\b\w*ufat\w*\b/gi, function (match) {
-                    return match.replace(/ufat/gi, "u");
-                });
-        } else {
-            textWork = document.getElementById("textoWork");
-            textResult = document.getElementById("resultado");
-            if (textWork.value.length === 0) {
-                swanOpcion("error");
-                textResult.value = "";
-
-            } else {
-                swanOpcion("info");
-                textResult.value = "";
-            }
-            textWork.value = "";
-            visibleOculto();
-        }
-        textWork.value = "";
-    }
-
-    document.getElementById("copiar").onclick = function () {
-        let copyText = document.getElementById("resultado");
-        let textWork = document.getElementById("textoWork");
-        if (copyText.value.length > 0) {
-            copyText.select();
-            navigator.clipboard.writeText(copyText.value);
-            textWork.value = copyText.value;
-
-        } else {
-            swanOpcion("copiar");
-        }
-
-    }
-
-</script>
+<script src="js/corazonEncriptador.js"></script>
+<script src="js/swalSwitchStyle.js"></script>
+<script src="js/ocultarVisualizarBoxDerecha.js"></script>
 
 
 
