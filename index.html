@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -45,17 +47,17 @@
         <div class="boxResultado">
             <label for="resultado"></label>
             <textarea name="resultado" id="resultado" disabled></textarea>
-          <img src="img/bolitas.svg" alt="">
-          <p>¡¡¡Resultado listo!!!</p>
+            <img src="img/bolitas.svg" alt="">
+            <p>¡¡¡Resultado listo!!!</p>
             <div class="botonCopiar">
                 <button type="submit" class="sub" name="copiar" id="copiar">Copiar</button>
             </div>
         </div>
 
         <div class="img">
-          <p>No has ingresado ningun mensaje.</p>
+            <p>No has ingresado ningun mensaje.</p>
             <img src="img/1.png" alt="">
-          <p>Estamos listos solo pulsa un boton!!</p>
+            <p>Estamos listos solo pulsa un boton!!</p>
 
         </div>
 
@@ -94,6 +96,41 @@
 
     visibleOculto();
 </script>
+
+<script>
+    function swanOpcion(opcion){
+        switch (opcion) {
+            case "error":
+                Swal.fire({
+                    icon: "error",
+                    title: "Texto vacio...",
+                    text: "El campo de texto no puede estar vacio!",
+                    width:"320px",
+                    background: " rgba(0, 156, 189, 0.7)",
+                    color: "white"
+                });
+                break;
+            case "info":
+                Swal.fire({
+                    icon: "info",
+                    title: "Caracteres no validos",
+                    text: "Solo letras minusculas sin numeros ni caracteres especiales",
+                    width:"320px"
+                });
+                break;
+            case "copiar":
+                Swal.fire({
+                    icon: "info",
+                    title: "Sin texto para copiar",
+                    text: "El campo de texto no puede estar vacio",
+                    width:"320px"
+                });
+                break;
+            default:
+            // código a ejecutar si ninguna de las opciones anteriores se cumple
+        }
+    }
+</script>
 <script>
 
     document.getElementById("encri").onclick = function () {
@@ -112,13 +149,10 @@
             textWork.value = "";
         } else {
             textWork = document.getElementById("textoWork");
-            textResult = document.getElementById("resultado");
             if (textWork.value.length === 0) {
-                swal("Texto vacio", "El campo de texto no puede estar vacio", "error");
-                textResult.value = "";
+                swanOpcion("error");
             } else {
-                swal("Caracteres no validos", "Solo letras minusculas sin numeros ni caracteres especiales", "info");
-                textResult.value = "";
+                swanOpcion("info");
             }
             textWork.value = "";
             visibleOculto();
@@ -153,11 +187,11 @@
             textWork = document.getElementById("textoWork");
             textResult = document.getElementById("resultado");
             if (textWork.value.length === 0) {
-                swal("Texto vacio", "El campo de texto no puede estar vacio", "error");
+                swanOpcion("error");
                 textResult.value = "";
 
             } else {
-                swal("Caracteres no validos", "Solo letras minusculas sin numeros ni caracteres especiales", "info");
+                swanOpcion("info");
                 textResult.value = "";
             }
             textWork.value = "";
@@ -175,10 +209,12 @@
             textWork.value = copyText.value;
 
         } else {
-            swal("Sin texto para copiar", "El campo de texto no puede estar vacio", "info");
+            swanOpcion("copiar");
         }
 
     }
 
 </script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
