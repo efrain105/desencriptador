@@ -184,7 +184,12 @@ textarea:focus {
         padding: 10px;
         margin: 0;
         width: 450px;
-        height: 280px;
+    }
+
+    .boxResultado textarea{
+        height: 250px;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 }
 
