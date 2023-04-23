@@ -66,7 +66,6 @@ footer p{
     justify-content: center;
     align-items: center;
     color: wheat;
-    margin-bottom: 100px;
 }
 
 
@@ -213,8 +212,9 @@ textarea:focus {
         zoom: 70%;
     }
     .contenedor1 {
-        margin: 0;
+        margin-bottom: 70px;
         padding: 0;
+
     }
 
     .box {
