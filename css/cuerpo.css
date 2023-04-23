@@ -5,25 +5,59 @@
 }
 
 html {
-
+    height: 100%;
 }
 
 .cuerpo {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    flex-direction: column;
+    background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     background-attachment: fixed;
     background-position: center center;
     animation: animacionFondo 5s infinite;
     background-size: 500%;
     font-family: 'Anuphan', sans-serif;
+    min-height: 100vh;
 }
+
+footer {
+    display: flex;
+    background-color: rgba(52, 50, 50, 0.62);
+    color: #fff;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: -3px -15px 43px 13px rgba(64,180,201,0.75);
+
+}
+
+footer div {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 100px;
+}
+.logo {
+    width: 40%;
+    justify-content: right;
+
+}
+footer p{
+    padding-left: 50px;
+    font-size: 40px;
+    color: wheat;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+
+
 
 .contenedor1 {
     width: 100%;
     height: auto;
-    padding: 50px;
+    padding: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -53,10 +87,12 @@ html {
     justify-content: center;
     align-items: center;
 }
-.boxTexto p{
+
+.boxTexto p {
     text-align: left;
 }
-.boxTexto p::first-letter{
+
+.boxTexto p::first-letter {
     font-size: 22px;
 }
 
@@ -65,7 +101,7 @@ html {
     width: 400px;
     height: 400px;
     resize: none;
-    margin: 50px;
+    margin: 10px;
     font-size: 23px;
     color: wheat;
     background-image: linear-gradient(to bottom, rgba(133, 127, 127, 0.34), rgba(63, 58, 56, 0));
@@ -81,9 +117,9 @@ html {
 
 .boxResultado textarea {
     width: 400px;
-    height: 338px;
+    height: 295px;
     resize: none;
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: 23px;
     color: wheat;
     background-image: linear-gradient(to bottom, rgba(133, 127, 127, 0.34), rgba(63, 58, 56, 0));
@@ -91,10 +127,11 @@ html {
     padding: 10px;
 }
 
-textarea::placeholder{
+textarea::placeholder {
     padding-top: 50%;
     line-height: normal;
 }
+
 textarea {
     border-radius: 10px;
     color: white;
@@ -172,21 +209,23 @@ textarea:focus {
         width: 100%;
         zoom: 70%;
     }
-    .contenedor1{
+
+    .contenedor1 {
         margin: 0;
         padding: 0;
     }
 
-    .box{
+    .box {
         padding-top: 20px;
     }
-    .box textarea{
+
+    .box textarea {
         padding: 10px;
         margin: 0;
         width: 450px;
     }
 
-    .boxResultado textarea{
+    .boxResultado textarea {
         height: 250px;
         padding-bottom: 0;
         margin-bottom: 0;
@@ -194,10 +233,11 @@ textarea:focus {
 }
 
 @media screen and (max-height: 480px) {
-    .contenedor1{
+    .contenedor1 {
         zoom: 55%;
     }
-    .box{
+
+    .box {
         flex-direction: row;
         flex-wrap: nowrap;
     }
@@ -213,7 +253,7 @@ textarea:focus {
     font-size: 20px;
 }
 
-.img img{
+.img img {
     margin-top: 40px;
     width: 250px;
     height: 300px;
@@ -221,11 +261,11 @@ textarea:focus {
 }
 
 
-.none{
+.none {
     display: none;
 }
 
-.aparecer{
+.aparecer {
     display: flex;
 }
 
