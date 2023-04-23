@@ -157,12 +157,12 @@ textarea:focus {
 
 
 .sub#encri {
-    text-shadow: 0px 2px 12px rgba(255, 255, 255, 0.66);
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.66);
     background-color: rgba(255, 255, 12, 0.47);
 }
 
 .sub#desen {
-    text-shadow: 0px 2px 12px rgba(255, 255, 255, 0.66);
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.66);
     background-color: rgb(20, 91, 159);
 }
 
@@ -172,7 +172,19 @@ textarea:focus {
         width: 100%;
         zoom: 70%;
     }
+    .contenedor1{
+        margin: 0;
+        padding: 0;
+    }
 
+    .box{
+        padding-top: 20px;
+    }
+    .box textarea{
+        padding: 10px;
+        margin: 0;
+        width: 450px;
+    }
 }
 
 .img {
