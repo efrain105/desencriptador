@@ -193,6 +193,16 @@ textarea:focus {
     }
 }
 
+@media screen and (max-height: 480px) {
+    .contenedor1{
+        zoom: 55%;
+    }
+    .box{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+}
+
 
 
 .img {
