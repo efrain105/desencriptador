@@ -95,6 +95,7 @@
     visibleOculto();
 </script>
 <script>
+
     document.getElementById("encri").onclick = function () {
         visibleOculto();
         const regex = /^[a-z \n]+$/;
@@ -113,16 +114,14 @@
             textWork = document.getElementById("textoWork");
             textResult = document.getElementById("resultado");
             if (textWork.value.length === 0) {
-                alert("No has introducido un texto");
+                swal("Texto vacio", "El campo de texto no puede estar vacio", "error");
                 textResult.value = "";
             } else {
-                textResult.value = "el texto introducido no cumple los requisitos"
-                    + "\nrecuerda que tienen que ser solo letras minusculas"
-                    + " sin numeros ni caracteres especiales puedes copiar este texto como ejemplo";
-
-                visibleOculto();
+                swal("Caracteres no validos", "Solo letras minusculas sin numeros ni caracteres especiales", "info");
+                textResult.value = "";
             }
             textWork.value = "";
+            visibleOculto();
         }
 
     }
@@ -154,33 +153,32 @@
             textWork = document.getElementById("textoWork");
             textResult = document.getElementById("resultado");
             if (textWork.value.length === 0) {
-                alert("No has introducido un texto");
+                swal("Texto vacio", "El campo de texto no puede estar vacio", "error");
                 textResult.value = "";
 
             } else {
-                textResult.value = "El texto introducido no cumple los requisitos"
-                    + "\nRecuerda que tienen que ser solo letras mayusculas,"
-                    + " sin numeros ni caracteres especiales";
-
+                swal("Caracteres no validos", "Solo letras minusculas sin numeros ni caracteres especiales", "info");
+                textResult.value = "";
             }
             textWork.value = "";
-
+            visibleOculto();
         }
         textWork.value = "";
     }
 
     document.getElementById("copiar").onclick = function () {
         let copyText = document.getElementById("resultado");
+        let textWork = document.getElementById("textoWork");
         if (copyText.value.length > 0) {
             copyText.select();
             navigator.clipboard.writeText(copyText.value);
+            textWork.value = copyText.value;
 
         } else {
-            alert("No hay ningun texto para copiar");
-
+            swal("Sin texto para copiar", "El campo de texto no puede estar vacio", "info");
         }
 
     }
 
 </script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

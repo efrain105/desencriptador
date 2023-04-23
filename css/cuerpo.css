@@ -203,8 +203,6 @@ textarea:focus {
     }
 }
 
-
-
 .img {
     width: 400px;
     height: 550px;
@@ -230,6 +228,9 @@ textarea:focus {
 .aparecer{
     display: flex;
 }
+
+
+
 
 
 
