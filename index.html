@@ -95,11 +95,6 @@
     visibleOculto();
 </script>
 <script>
-    function focus() {
-        document.getElementById("textoWork").focus();
-    }
-
-    focus();
     document.getElementById("encri").onclick = function () {
         visibleOculto();
         const regex = /^[a-z \n]+$/;
@@ -114,23 +109,20 @@
                 .replace(/o/gi, "ober")
                 .replace(/u/gi, "ufat");
             textWork.value = "";
-            focus();
         } else {
             textWork = document.getElementById("textoWork");
             textResult = document.getElementById("resultado");
             if (textWork.value.length === 0) {
                 alert("No has introducido un texto");
                 textResult.value = "";
-                focus();
             } else {
                 textResult.value = "el texto introducido no cumple los requisitos"
                     + "\nrecuerda que tienen que ser solo letras mayusculas"
                     + " sin numeros ni caracteres especiales puedes copiar este texto como ejemplo";
-                focus();
+
                 visibleOculto();
             }
             textWork.value = "";
-            focus();
         }
 
     }
@@ -158,25 +150,23 @@
                 .replace(/\b\w*ufat\w*\b/gi, function (match) {
                     return match.replace(/ufat/gi, "u");
                 });
-            focus();
         } else {
             textWork = document.getElementById("textoWork");
             textResult = document.getElementById("resultado");
             if (textWork.value.length === 0) {
                 alert("No has introducido un texto");
                 textResult.value = "";
-                focus();
+
             } else {
                 textResult.value = "El texto introducido no cumple los requisitos"
                     + "\nRecuerda que tienen que ser solo letras mayusculas,"
                     + " sin numeros ni caracteres especiales";
-                focus();
+
             }
             textWork.value = "";
-            focus();
+
         }
         textWork.value = "";
-        focus();
     }
 
     document.getElementById("copiar").onclick = function () {
@@ -184,12 +174,12 @@
         if (copyText.value.length > 0) {
             copyText.select();
             navigator.clipboard.writeText(copyText.value);
-            focus();
+
         } else {
             alert("No hay ningun texto para copiar");
-            focus();
+
         }
-        focus();
+
     }
 
 </script>
