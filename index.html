@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>desencriptador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cuerpo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@200;300&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body class="cuerpo">
+<header>
+
+</header>
+
+
+<div class="contenedor1">
+
+
+    <section class="instrucciones">
+    </section>
+
+    <section class="box">
+
+        <div class="boxTexto">
+            <label for="textoWork"></label>
+            <textarea name="textoWork" id="textoWork"
+                      placeholder="Ingresa el texto para encriptar o desencriptar"></textarea>
+            <p> &#10071;Solo letras minusculas sin acentos</p>
+            <div class="botones">
+                <button type="submit" class="sub" name="desencriptar" id="encri">Encriptar</button>
+                <button type="submit" class="sub" name="encriptar" id="desen">Desencriptar</button>
+            </div>
+        </div>
+
+
+        <div class="boxResultado">
+            <label for="resultado"></label>
+            <textarea name="resultado" id="resultado" disabled></textarea>
+          <img src="img/bolitas.svg" alt="">
+          <p>¡¡¡Resultado listo!!!</p>
+            <div class="botonCopiar">
+                <button type="submit" class="sub" name="copiar" id="copiar">Copiar</button>
+            </div>
+        </div>
+
+        <div class="img">
+          <p>No has ingresado ningun mensaje.</p>
+            <img src="img/1.png" alt="">
+          <p>Estamos listos solo pulsa un boton!!</p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<footer>
+
+</footer>
+</body>
+
+
+</html>
+<script>
+    let resultado = document.getElementById("textoWork");
+
+    function visibleOculto() {
+        var boxResultado = document.querySelector(".boxResultado");
+        boxResultado.classList.add("none");
+        let imagen = document.querySelector(".img");
+        imagen.classList.add("aparecer");
+        if (resultado.value.length > 0) {
+            boxResultado.classList.remove("none");
+            boxResultado.classList.add("aparecer");
+            imagen.classList.remove("aparecer");
+            imagen.classList.add("none");
+        } else {
+            boxResultado.classList.add("none");
+            boxResultado.classList.remove("aparecer");
+            imagen.classList.remove("none");
+            imagen.classList.add("aparecer");
+        }
+    }
+
+    visibleOculto();
+</script>
+<script>
+    function focus() {
+        document.getElementById("textoWork").focus();
+    }
+
+    focus();
+    document.getElementById("encri").onclick = function () {
+        visibleOculto();
+        const regex = /^[a-z \n]+$/;
+        let textWork = document.getElementById("textoWork");
+        let textResult;
+        if (regex.test(textWork.value)) {
+            textResult = document.getElementById("resultado");
+            textResult.value = textWork.value
+                .replace(/e/gi, "enter")
+                .replace(/i/gi, "imes")
+                .replace(/a/gi, "ai")
+                .replace(/o/gi, "ober")
+                .replace(/u/gi, "ufat");
+            textWork.value = "";
+            focus();
+        } else {
+            textWork = document.getElementById("textoWork");
+            textResult = document.getElementById("resultado");
+            if (textWork.value.length === 0) {
+                alert("No has introducido un texto");
+                textResult.value = "";
+                focus();
+            } else {
+                textResult.value = "el texto introducido no cumple los requisitos"
+                    + "\nrecuerda que tienen que ser solo letras mayusculas"
+                    + " sin numeros ni caracteres especiales puedes copiar este texto como ejemplo";
+                focus();
+                visibleOculto();
+            }
+            textWork.value = "";
+            focus();
+        }
+
+    }
+
+    document.getElementById("desen").onclick = function () {
+        visibleOculto();
+        const regex = /^[a-z \n]+$/;
+        let textWork = document.getElementById("textoWork");
+        let textResult;
+        if (regex.test(textWork.value)) {
+            textResult = document.getElementById("resultado");
+            textResult.value = textWork.value
+                .replace(/\b\w*enter\w*\b/gi, function (match) {
+                    return match.replace(/enter/gi, "e");
+                })
+                .replace(/\b\w*imes\w*\b/gi, function (match) {
+                    return match.replace(/imes/gi, "i");
+                })
+                .replace(/\b\w*ai\w*\b/gi, function (match) {
+                    return match.replace(/ai/gi, "a");
+                })
+                .replace(/\b\w*ober\w*\b/gi, function (match) {
+                    return match.replace(/ober/gi, "o");
+                })
+                .replace(/\b\w*ufat\w*\b/gi, function (match) {
+                    return match.replace(/ufat/gi, "u");
+                });
+            focus();
+        } else {
+            textWork = document.getElementById("textoWork");
+            textResult = document.getElementById("resultado");
+            if (textWork.value.length === 0) {
+                alert("No has introducido un texto");
+                textResult.value = "";
+                focus();
+            } else {
+                textResult.value = "El texto introducido no cumple los requisitos"
+                    + "\nRecuerda que tienen que ser solo letras mayusculas,"
+                    + " sin numeros ni caracteres especiales";
+                focus();
+            }
+            textWork.value = "";
+            focus();
+        }
+        textWork.value = "";
+        focus();
+    }
+
+    document.getElementById("copiar").onclick = function () {
+        let copyText = document.getElementById("resultado");
+        if (copyText.value.length > 0) {
+            copyText.select();
+            navigator.clipboard.writeText(copyText.value);
+            focus();
+        } else {
+            alert("No hay ningun texto para copiar");
+            focus();
+        }
+        focus();
+    }
+
+</script>
+
