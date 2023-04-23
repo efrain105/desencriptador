@@ -115,6 +115,7 @@ footer p{
     justify-content: center;
     align-items: center;
     margin-top: 0;
+    padding-bottom: 60px;
 }
 
 .boxResultado textarea {
