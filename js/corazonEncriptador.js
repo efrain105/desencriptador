@@ -5,7 +5,7 @@ document.getElementById("encri").onclick = function () {
     let textResult;
     if (regex.test(textWork.value)) {
         textResult = document.getElementById("resultado");
-        textResult.value = textWork.value
+        textResult.textContent = textWork.value
             .replace(/e/gi, "enter")
             .replace(/i/gi, "imes")
             .replace(/a/gi, "ai")
@@ -26,8 +26,6 @@ document.getElementById("encri").onclick = function () {
 }
 
 
-
-
 document.getElementById("desen").onclick = function () {
     visibleOculto();
     const regex = /^[a-z \n]+$/;
@@ -35,7 +33,7 @@ document.getElementById("desen").onclick = function () {
     let textResult;
     if (regex.test(textWork.value)) {
         textResult = document.getElementById("resultado");
-        textResult.value = textWork.value
+        textResult.textContent = textWork.value
             .replace(/\b\w*enter\w*\b/gi, function (match) {
                 return match.replace(/enter/gi, "e");
             })
@@ -67,24 +65,28 @@ document.getElementById("desen").onclick = function () {
     }
     textWork.value = "";
 }
-const btnCopy = document.getElementById("copiar");
+
+let btnCopy = document.getElementById("copiar");
 
 function changeCopyButton() {
     btnCopy.textContent = "Copiar";
 }
+
 changeCopyButton();
 
 document.getElementById("copiar").onclick = function () {
     let copyText = document.getElementById("resultado");
     let textWork = document.getElementById("textoWork");
-    if (copyText.value.length > 0) {
-        copyText.select();
-        navigator.clipboard.writeText(copyText.value);
+    
+    if (copyText.textContent.length > 0){
+        navigator.clipboard.writeText(copyText.textContent);
         btnCopy.textContent = "Copiado con éxito!";
         setTimeout(changeCopyButton, 2000);
-        textWork.value = copyText.value;
-    } else {
-        swanOpcion("copiar");
+    }else {
+        swanOpcion("copiar")
     }
+    
+    textWork.value = copyText.textContent;
+    
 
 }

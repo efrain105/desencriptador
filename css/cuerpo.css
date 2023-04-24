@@ -21,17 +21,15 @@ html {
     background-size: 500%;
     font-family: 'Anuphan', sans-serif;
     min-height: 100vh;
-
 }
 
 footer {
     display: flex;
-    background-color: rgba(44, 83, 100, 0.62);
+    background-color: rgba(15, 32, 39, 0.44);
     color: #fff;
     width: 100%;
     margin-top: auto;
-    box-shadow: -3px -15px 43px 13px rgba(245, 222, 179, 0.5);
-
+    box-shadow: -3px -15px 43px 13px rgba(0, 0, 0, 0.76);
 }
 
 footer div {
@@ -40,7 +38,7 @@ footer div {
     align-items: center;
 }
 .logo img{
-    width: 100px;
+    width: 90px;
 }
 .logo {
     width: 40%;
@@ -48,14 +46,11 @@ footer div {
 }
 footer p{
     padding-left: 50px;
-    font-size: 35px;
+    font-size: 25px;
     color: wheat;
     font-weight: lighter;
     font-style: italic;
 }
-
-
-
 
 .contenedor1 {
     width: 100%;
@@ -69,13 +64,6 @@ footer p{
 }
 
 
-.instrucciones {
-    width: 100%;
-    text-align: center;
-    color: wheat;
-    background: rgba(0, 0, 0, 0.6);
-}
-
 .box {
     display: flex;
     flex-wrap: wrap;
@@ -88,6 +76,7 @@ footer p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .boxTexto p {
@@ -100,7 +89,6 @@ footer p{
     border-radius: 50px;
 }
 
-
 .boxTexto textarea {
     width: 400px;
     height: 400px;
@@ -109,6 +97,7 @@ footer p{
     font-size: 23px;
     color: wheat;
     background-image: linear-gradient(to bottom, rgba(133, 127, 127, 0.34), rgba(63, 58, 56, 0));
+    padding: 30px;
 }
 
 .boxResultado {
@@ -116,21 +105,28 @@ footer p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0;
+    margin-bottom: 100px;
 }
 
-.boxResultado textarea {
+.textAreaPadre{
+    display: table;
+}
+.textAreaPadre p {
     width: 400px;
-    height: 295px;
+    height: auto;
+    min-height: 130px;
+    max-height: 295px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    overflow: auto;
     resize: none;
-    margin-top: 10px;
     font-size: 23px;
     color: wheat;
     background-image: linear-gradient(to bottom, rgba(133, 127, 127, 0.34), rgba(63, 58, 56, 0));
     text-align: center;
-    padding: 10px;
-
+    padding: 20px;
 }
+
 
 textarea::placeholder {
     padding-top: 50%;
@@ -186,7 +182,7 @@ textarea:focus {
     border: #2c5364 1px solid;
     border-radius: 20px;
     height: 45px;
-    width: 150px;
+    width: 180px;
     margin-top: 50px;
     text-align: -moz-center;
     background-color: #1b343d;
@@ -203,6 +199,7 @@ textarea:focus {
 .sub#desen {
     background-color: #1b343d;
 }
+
 
 
 
@@ -285,6 +282,7 @@ textarea:focus {
     width: .5rem;
     height: .5rem;
     background: hsl(var(--clr-neutral-200));
+    border-radius: 50px;
 }
 
 
