@@ -5,7 +5,7 @@ document.getElementById("encri").onclick = function () {
     let textResult;
     if (regex.test(textWork.value.toLowerCase())) {
         textResult = document.getElementById("resultado");
-        textResult.textContent = textWork.value
+        textResult.textContent = textWork.value.toLowerCase()
             .replace(/e/gi, "enter")
             .replace(/i/gi, "imes")
             .replace(/a/gi, "ai")
@@ -33,7 +33,7 @@ document.getElementById("desen").onclick = function () {
     let textResult;
     if (regex.test(textWork.value.toLowerCase())) {
         textResult = document.getElementById("resultado");
-        textResult.textContent = textWork.value
+        textResult.textContent = textWork.value.toLowerCase()
             .replace(/\b\w*enter\w*\b/gi, function (match) {
                 return match.replace(/enter/gi, "e");
             })
