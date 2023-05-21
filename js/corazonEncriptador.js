@@ -1,7 +1,7 @@
 document.getElementById("encri").onclick = function () {
     visibleOculto();
     const regex = /^[a-z \n]+$/;
-    let textWork = document.getElementById("textoWork");
+    let textWork = document.getElementById("textoWork").toLowerCase();
     let textResult;
     if (regex.test(textWork.value)) {
         textResult = document.getElementById("resultado");
@@ -29,7 +29,7 @@ document.getElementById("encri").onclick = function () {
 document.getElementById("desen").onclick = function () {
     visibleOculto();
     const regex = /^[a-z \n]+$/;
-    let textWork = document.getElementById("textoWork");
+    let textWork = document.getElementById("textoWork").toLowerCase();
     let textResult;
     if (regex.test(textWork.value)) {
         textResult = document.getElementById("resultado");
