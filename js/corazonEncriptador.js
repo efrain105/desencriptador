@@ -1,9 +1,9 @@
 document.getElementById("encri").onclick = function () {
     visibleOculto();
     const regex = /^[a-z \n]+$/;
-    let textWork = document.getElementById("textoWork").toLowerCase();
+    let textWork = document.getElementById("textoWork");
     let textResult;
-    if (regex.test(textWork.value)) {
+    if (regex.test(textWork.value.toLowerCase())) {
         textResult = document.getElementById("resultado");
         textResult.textContent = textWork.value
             .replace(/e/gi, "enter")
@@ -29,9 +29,9 @@ document.getElementById("encri").onclick = function () {
 document.getElementById("desen").onclick = function () {
     visibleOculto();
     const regex = /^[a-z \n]+$/;
-    let textWork = document.getElementById("textoWork").toLowerCase();
+    let textWork = document.getElementById("textoWork");
     let textResult;
-    if (regex.test(textWork.value)) {
+    if (regex.test(textWork.value.toLowerCase())) {
         textResult = document.getElementById("resultado");
         textResult.textContent = textWork.value
             .replace(/\b\w*enter\w*\b/gi, function (match) {
